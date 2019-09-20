@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASSESSMENT</title>
+          <!-- <link href="./CustomStyles.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script>
+    
+        
+        
+        //--------------------------------------PASSWORD VALIDATION----------------------------------------------------------------------s
+        
+    function passvalidate(){
+        
+        var x= document.getElementById("pass").value;
+         var y= document.getElementById("pass1").value;
+        
+       
+        if(x!==y){
+            alert("Password do not match");
+        }
+        
+        
+    }
+    
+    
+    </script>
+    
+    
+    
+    <script>
+        
+        
+        //--------------------------------------------------SELECT VALIDATIONS------------------------------------------------------------
+    
+    type =['graduation','Post-Graduation'];
+
+data=[['Computer Science','ECE','Civil Engineering','Mechanical Engineering','Bachelor of Arts'],['MBA','Mtech'] ];
+
+
+function fillDD()
+{
+var Typedd =document.getElementById('type');
+for(i=0;i<type.length;i++)
+{
+var ele= document.createElement('option');
+ele.text=type[i];
+Typedd.add(ele,i+1);
+
+}
+}
+
+
+function fillData()
+{
+
+var Typedd =document.getElementById('type');
+var selectedIdx= Typedd.selectedIndex;5
+
+var Datadd =document.getElementById('data');
+
+Datadd.innerText=null;
+
+for(i=0;i<data[selectedIdx-1].length;i++)
+{
+var ele=document.createElement('option');
+ele.text=data[selectedIdx-1][i];
+Datadd.add(ele,i+1);
+
+}
+
+}
+        
+        //--------------------------------------------DATE VALIDATION--------------------------------------------------
+        
+        
+        
+        
+        function validateDob() {
+
+var date= new Date();
+
+var year=date.getFullYear();
+ year1=2001;
+var month=date.getMonth()+1;
+var dd=date.getDate();
+
+if(month<10)
+{
+month='0'+month;
+}
+if(dd<10)
+{
+dd=0+""+dd;
+}
+//document.getElementById('dob').min=year1+"-"+month+"-"+dd;
+document.getElementById('dob').max=year1+"-"+month+"-"+dd;
+
+}
+        
+    
+    
+    </script>
+    <style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+        
+        
+        body{
+            
+           background: #acb6e5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        form{
+            
+            background: #9796f0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            
+            
+            
+             border: none;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            height: 450px;
+            
+        }
+        .form1{
+            margin-top: 4px;
+            margin-bottom: 20px;
+            
+            
+        }
+        
+        .btn{
+            
+            width: 80%;
+            border: none;
+        }
+        legend{
+            background: #24C6DC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        
+    
+    </style>
+    
+    
+    
+    
+    
+    
+    </head>
+
+
+<body onload="fillDD()">
+    
+    
+    
+    
+    
+    <div class="container">
+        
+        
+        <div class="row"></div><br><br>
+        <div class="row">
+            
+            
+         
+          
+        
+       
+        
+        <div class="col-sm-12 col-md-12 col-lg-12 ">
+            
+           
+            
+            <form method="post">
+            <fieldset>
+                <legend><b>LOGIN FORM</legend></b>
+            <input type="text" placeholder=" Enter UserName" id="name" class="form1 form-control"><br>
+                <input type="password" placeholder=" Enter password" id="pass" class="form1 form-control"><br>
+                <input type="password" placeholder=" Confirm password" id="pass1" class="form1 form-control"><br>
+                
+                
+                
+                
+                <b>QUALIFICATIONS:</b> <select id="type" onchange="fillData()" class="form1 ">
+                <option>SELECT Type</option>
+</select>
+
+
+                 <select id="data"  class="form1">
+                <option>SELECT</option>
+                 </select><br>
+                     
+                
+                
+               <b>DOB:</b> <input type="date" id="dob" class="form1" onclick="validateDob()"><br>
+                
+                <input type="button" value="click" class="form1 btn btn-primary" onclick="passvalidate()">
+                
+              
+            </fieldset>
+            
+            
+            </form>
+    
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+
+</html>
